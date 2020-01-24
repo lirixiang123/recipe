@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+
+
+<section class="demo-section demo-section--light" id="demo">
+	<div class="container">
+		<h2 class="title heading">Custom HTML5 Video Player with Ckins...</h2>
+		
+		
+		<video poster="/static/ckin.jpg" src="https://vdse.bdstatic.com//4ce0a6eeb24802f7f9f4cff911357c5c?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2017-05-11T09%3A02%3A31Z%2F-1%2F%2F5b89ecc8eaa02a42be55690e4417293c4dc719f17e7bfb3610a16292cad44020" data-ckin="default" data-overlay="1" data-title="The curious case of Chameleon..."></video>
+		
+		
+		<p class="tr">Demo video by
+			<a href="https://vimeo.com/lumatic" target="_blank">Lumatic</a>
+		</p>
+		
+	</div>
+</section>
+
+<section class="demo-section demo-section--light" id="skins">
+	<div class="container">
+		<h2 class="title heading">Skins</h2>
+		<ul class="demo-list">
+			<li class="demo-list__item">
+				<p>Default Ckin without overlay</p>
+				<video poster="/static/ckin.jpg" src="/static/ckin.mp4" data-ckin="default"></video>
+			</li>
+			<li class="demo-list__item">
+				<p>Minimal Ckin with overlay</p>
+				<video poster="/static/ckin.jpg" src="/static/ckin.mp4" data-ckin="minimal" data-overlay="1"></video>
+			</li>
+			<li class="demo-list__item">
+				<p>Compact Ckin with overlay</p>
+				<video poster="/static/ckin.jpg" src="/static/ckin.mp4" data-ckin="compact" data-overlay="2"></video>
+			</li>
+			<li class="demo-list__item">
+				<p>Compact Ckin with custom color</p>
+				<video poster="/static/ckin.jpg" src="/static/ckin.mp4" data-color="#fff000" data-ckin="compact" data-overlay="2"></video>
+			</li>
+			<li class="demo-list__item">
+				<img src="/static/logo.png" class="nav__logo" alt="Ckin">
+				<h2 class="coming-soon">More ckins coming soon...</h2>
+			</li>
+		</ul>
+	</div>
+</section>
+
+
+<script src="/static/dist/js/ckin.js"></script>
+
+
+{% endblock %}
