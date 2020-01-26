@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>登录页</title>
+<title>注册页</title>
 
 <link href="/static/css/login2.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
@@ -24,18 +24,21 @@ $(document).ready(function() {
      <div class="login_tit">
           <div>
             <i class="tit-bg left"></i>
-              Everyday · 登录界面
+              Everyday · 注册界面
             <i class="tit-bg right"></i>
           </div>
           <p>Strive&nbsp;&nbsp;&nbsp;&nbsp;Everyday</p>
      </div>
-   <form name="login" action="{% url 'login' %}" method="post">
+   <form name="register" action="{% url 'register' %}" method="post">
             {% csrf_token %}
      <p class="p user_icon">
        <input type="text" placeholder="账号" autocomplete="off" class="login_txtbx" name="username">
      </p>
      <p class="p pwd_icon">
        <input type="password" placeholder="密码" autocomplete="off" class="login_txtbx" name="password1">
+     </p>
+     <p class="p pwd_icon">
+       <input type="password" placeholder="确认密码" autocomplete="off" class="login_txtbx" name="password2">
      </p>
      <div class="p val_icon">
         <div class="checkcode">
@@ -44,11 +47,11 @@ $(document).ready(function() {
         </div>
         <a class="ver_btn" onclick="createCode();" onselectstart="return false">看不清，换一张</a>
       </div>
-       <a href="{% url "register" %}"  style="color:#FFFFFF"><p>没有账号?点击注册</p></a>
+       {{ form.error_messages }}
       <div class="signup">
 
-        <a class="gv" onclick="validate();javascript:document.login.submit();"  >登&nbsp;&nbsp;录</a>
-          <a class="gv" onclick="javascript:document.login.reset();" >清&nbsp;&nbsp;空</a>
+        <a class="gv" onclick="validate();javascript:document.register.submit();"  >注&nbsp;&nbsp;册</a>
+          <a class="gv" onclick="javascript:document.register.reset();" href="#">清&nbsp;&nbsp;空</a>
      </div>
       </form>
   </div>

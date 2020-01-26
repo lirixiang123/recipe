@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block body %}
+<!-- Container -->
+<div class="container">
+
+	<!-- Accordion
+	================================================== -->
+
+	<div class="eleven columns">
+		<h3 class="headline">最热资讯</h3><span class="line margin-bottom-35"></span><div class="clearfix"></div>
+
+			<!-- Accordion -->
+			<div class="accordion">
+
+				<!-- Section 1 -->
+                {% for k,v in news.items %}
+				<h3><span class="ui-accordion-header-icon ui-icon ui-accordion-icon"></span>{{ forloop.counter }}&emsp;{{ k }}</h3>
+				<div>
+					<p><a href="{% url "news_detail" %}?id={{ forloop.counter }}">{{ v }}</a></p>
+				</div>
+                {% endfor %}
+			</div>
+			<!-- Accordion / End -->
+	</div>
+
+
+
+
+
+
+
+</div>
+<!-- Container / End -->
+
+
+<div class="margin-top-40"></div>
+
+
+
+{% endblock %}

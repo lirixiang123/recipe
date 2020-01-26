@@ -50,7 +50,7 @@
 	<!-- Logo / Mobile Menu -->
 	<div class="three columns">
 		<div id="logo">
-			<h1><a href="index.html"><img src="/static/images/logo.png" alt="Chow" /></a></h1>
+			<h1><a href="{% url "index" %}"><img src="/static/images/logo.png" alt="Chow" /></a></h1>
 		</div>
 	</div>
 
@@ -61,28 +61,31 @@
 
 	<nav id="navigation" class="menu nav-collapse">
 		<ul>
-			<li><a href="{% url 'index' %}" id="current">主页</a></li>
 
-			<li><a href="{%  url  'search' %}">美食分类</a></li>
+			<li><a href="{% url 'index' %}" id="{% if request.path == "/" %}current{% endif %}" >主页</a></li>
 
-            <li><a href="{%  url  'video' %}">美食视频</a></li>
+            <li><a href="{% url "news" %}" id="{% if request.path == "/news" %}current{% endif %}">美食资讯</a></li>
 
-			<li><a href="#">Pages</a>
+			<li><a href="{%  url  'search' %}" id="{% if request.path == "/search" %}current{% endif %}">美食搜索</a></li>
+
+            <li><a href="{%  url  'video' %}" id="{% if request.path == "/video" %}current{% endif %}">美食视频</a></li>
+
+			<li><a href="#">用户中心</a>
 				<ul>
-					<li><a href="shortcodes.html">Shortcodes</a></li>
-					<li><a href="typography.html">Typography</a></li>
-					<li><a href="contact.html">Contact</a></li>
+
+
+                    <li><a href="{%  url "submit"  %}">个人中心</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{%  url "logout"  %}">登出</a></li>
+                    {% else %}
+                        <li><a href="{%  url "login"  %}">登录</a></li>
+                        <li><a href="{%  url "register"  %}">注册</a></li>
+                    {% endif %}
+
+
+
 				</ul>
 			</li>
-
-			<li><a href="#">Shop</a>
-				<ul>
-					<li><a href="shop.html">Shop</a></li>
-					<li><a href="product-page.html">Product Page</a></li>
-				</ul>
-			</li>
-
-			<li><a href="submit-recipe.html">Submit Recipe</a></li>
 		</ul>
 	</nav>
 
