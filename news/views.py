@@ -17,7 +17,7 @@ def news_detail(request):
     soup = get_soup(link)
     title = soup.select('div.main a')[0].get_text()
     contents = soup.select('div.content p')
-    content=" ".join(repr(e) for e in contents)
+    content=" ".join(repr(i) for i in contents)
     return render(request,"news_detail.html",locals())
 
 def get_soup(url = 'https://www.meishichina.com/News/'):

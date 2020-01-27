@@ -16,7 +16,7 @@
                 {% for k,v in news.items %}
 				<h3><span class="ui-accordion-header-icon ui-icon ui-accordion-icon"></span>{{ forloop.counter }}&emsp;{{ k }}</h3>
 				<div>
-					<p><a href="{% url "news_detail" %}?id={{ forloop.counter }}">{{ v }}</a></p>
+					<a href="{% url "news_detail" %}?id={{ forloop.counter }}"><p>{{ v }}</p></a>
 				</div>
                 {% endfor %}
 			</div>

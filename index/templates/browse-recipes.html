@@ -129,7 +129,7 @@
 				<nav class="search-by-keyword">
 					<form action="{% url "search" %}" method="get">
                         {% csrf_token %}
-						<button><span>搜索美食</span><i class="fa fa-search"></i></button>
+						<button>搜索美食<i class="fa fa-search"></i></button>
 						<input class="search-field" type="text" placeholder="通过关键字搜素..." value="" name="q"/>
 					</form>
 				</nav>
