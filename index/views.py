@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import *
 from comment.models import Comment
+from comment.form import CommentText
 # Create your views here.
 def index(request):
     ranking = Item.objects.order_by('-likes')[:5]

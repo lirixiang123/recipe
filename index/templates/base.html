@@ -20,7 +20,7 @@
 ================================================== -->
 <link rel="stylesheet" href="/static/css/style.css">
 <link rel="stylesheet" href="/static/css/colors/green.css" id="colors">
-
+<script type="text/javascript" src="/static/scripts/jquery-1.11.0.min.js"></script>
 
 <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -90,8 +90,9 @@
 <!-- Container / End -->
 </header>
 
-    {% block body  %}
-    {% endblock %}
+    {% block body  %}{% endblock %}
+
+
 
 </div>
 <!-- Wrapper / End -->
@@ -234,7 +235,7 @@
 
 </div>
 
-<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
     <script>
         $(function () {
             $(".like").click(function () {
@@ -242,6 +243,7 @@
             })
         })
     </script>
+    {% block script_ajax  %}{% endblock %}
 </body>
 
 </html>

@@ -10,25 +10,6 @@ from index.models import Item
 # Create your views here.
 
 
-# 错误响应的方法
-def error_response(message):
-    data = {}
-    data['status'] = 'ERROR'
-    data['message'] = message
-    return JsonResponse(data)
-
-
-# 正确响应的方法
-def success_response(comment_text, comment_user, comment_time):
-    data = {}
-    data['status'] = 'SUCCESS'
-    data['message'] = '评论成功'
-    data['comment_text'] = comment_text
-    data['comment_user'] = str(comment_user)
-    data['comment_time'] = comment_time
-    return JsonResponse(data)
-
-
 # def comment(request):
 #     # 判断用户是否登录
 #     if not request.user.is_authenticated:
@@ -58,9 +39,11 @@ def comment(request):
     comment_text = request.POST.get('text','')
     content_type = request.POST.get('content_type','')
     object_id = request.POST.get('object_id','')
-    print(content_type)
-    print(object_id)
-    print(comment_text)
+    data = {}
+    data['status'] = 'SUCCESS'
+    # print(content_type)
+    # print(object_id)
+    # print(comment_text)
     model_class = ContentType.objects.get(model=content_type)
 
 
@@ -71,7 +54,13 @@ def comment(request):
     comment.comment_text = comment_text
     comment.content_type = model_class
     comment.save()
-    referer = request.META.get('HTTP_REFERER',reverse('index'))
-    return redirect(referer)
+
+    item =  Item.objects.get(id = object_id)
+    item.comment = int(item.comment) + 1
+    item.save()
+    # referer = request.META.get('HTTP_REFERER',reverse('index'))
+    # return redirect(referer)
+
+    return JsonResponse(data)
 
 

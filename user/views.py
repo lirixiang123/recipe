@@ -37,12 +37,13 @@ class Register(View):
             print(form.error_messages)
             # print(form)
             if form.is_valid():
-                form.save()
-                username = request.cleaned_data['username']
-                password = request.cleaned_data['password1']
-                user = authenticate(username = username,password = password)
+                username = form.cleaned_data['username']
+                password = form.cleaned_data['password1']
+                user = User.objects.create_user(username= username,password = password)
+                user.save()
                 if user:
                     request.session['session_id'] = user.pk
+                    user = authenticate(username = username,password = password)
                     login(request,user)
                     return redirect('index')
             form = UserCreationForm()

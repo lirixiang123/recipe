@@ -194,7 +194,7 @@
 		<h3 class="headline">提交评论</h3><span class="line margin-bottom-35"></span><div class="clearfix"></div>
 		 {% if user.is_authenticated %}
              <!-- Add Comment Form -->
-		<form id="add-review" class="add-comment" action="{% url "comment" %}" method="post" name="add_review">
+		<form id="add-review" class="add-comment" action="" method="post" name="add_review">
         {% csrf_token %}
 			<fieldset>
 				<div class="clearfix"></div>
@@ -203,13 +203,43 @@
                     <input type="hidden" name="object_id" value="{{ item.id }}">
                     <input type="hidden" name="content_type" value="Item">
 					<textarea cols="40" rows="3" name="text"></textarea>
+{#                    {% for i in form %}#}
+{#                        {{ i }}#}
+{#                    {% endfor %}#}
+
 				</div>
 			</fieldset>
-			<a  class="button medium color" onclick="javascript:document.add_review.submit();">评论</a>
+{#			<a  class="button medium color" onclick="javascript:document.add_review.submit();">评论</a>#}
+
+            <input type="submit" style="min-width: 40px;" value="评论" >
+
 			<div class="clearfix"></div>
 		</form>
         {% else %}
 		    <a href="{% url "login" %}" class="medium color">未登录?点击此处跳转至登录界面</a>{% endif %}
 	</div>
 
+{% endblock %}
+
+{% block script_ajax  %}
+
+    <script type="application/javascript">
+        $("#add-review").submit(function(){
+            //异步提交
+            $.ajax({
+                url: "{% url 'comment' %}",
+                type:'POST',
+                data:$(this).serialize(),
+                cache:false,
+                success:function(data){
+                    alert(data)
+                },
+                error:function(xhr){
+                    console.log(xhr);
+                }
+
+            });
+            return false
+        });
+    </script>
 {% endblock %}
