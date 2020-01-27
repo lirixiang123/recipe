@@ -146,68 +146,41 @@
 
 		<!-- Comments
 		================================================== -->
-		<h3 class="headline">Reviews(2) <span class="comments-amount"></span></h3><span class="line"></span><div class="clearfix"></div>
+		<h3 class="headline">全部评论({{ item.comment }})<span class="comments-amount"></span></h3><span class="line"></span><div class="clearfix"></div>
 		
 			<!-- Reviews -->
 			<section class="comments" id="reviews">
 
 				<ul>
-					<li>
-						<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
-						<div class="comment-content"><div class="arrow-comment"></div>
-							<div class="comment-by"><strong>John Doe</strong><span class="date">7th, October 2014</span>
-								<a href="#" class="reply"><i class="fa fa-reply"></i> Reply</a>
-							</div>
-							<p>Maecenas dignissim euismod nunc, in commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget just.</p>
-							<div class="rating five-stars">
-								<div class="star-rating"></div>
-								<div class="star-bg"></div>
-							</div>
-						</div>
+                    {% for i in comments %}
 
-						<!-- Second Level -->
-						<ul>
-							<li>
-								<div class="avatar"><img src="/static/images/author-photo.png" alt="" /></div>
-								<div class="comment-content"><div class="arrow-comment"></div>
-								<div class="comment-by"><strong>Sandra Fortin</strong><span class="date">7th, October 2014</span>
-								<a href="#" class="reply"><i class="fa fa-reply"></i> Reply</a>
-								</div>
-								<p>Donec porttitor tortor sit amet tortor egestas, id suscipit magna cursus. Nam facilisis, mi vel elementum porttitor, sapien magna posuere lorem, sed consectetur.</p>
-								</div>
-							</li>
-						</ul>
-
-					</li>
 
 					<li>
 						<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
 						<div class="comment-content"><div class="arrow-comment"></div>
-							<div class="comment-by"><strong>Kathy Brown</strong><span class="date">12th, October 2014</span>
-								<a href="#" class="reply"><i class="fa fa-reply"></i> Reply</a>
+							<div class="comment-by"><strong>{{ i.comment_user.username }}</strong>&emsp;{{ i.comment_time|date:"Y-m-d H:n:s" }}
+								<a href="#" class="reply"><i class="fa fa-reply"></i> 回复</a>
 							</div>
-							<p>Morbi velit eros, sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor imperdiet vitae. Curabitur lacinia neque non metus</p>
-							<div class="rating ive-stars">
-									<div class="star-rating"></div>
-									<div class="star-bg"></div>
-							</div>
-						</div>
-					</li>
-
-					<li>
-						<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /> </div>
-						<div class="comment-content"><div class="arrow-comment"></div>
-							<div class="comment-by"><strong>John Doe</strong><span class="date">15th, October 2014</span>
-								<a href="#" class="reply"><i class="fa fa-reply"></i> Reply</a>
-							</div>
-							<p>Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris.</p>
-							<div class="rating four-stars">
-								<div class="star-rating"></div>
-								<div class="star-bg"></div>
-							</div>
+							<p>{{ i.comment_text }}</p>
 						</div>
 
+{#						<!-- Second Level -->#}
+{#						<ul>#}
+{#							<li>#}
+{#								<div class="avatar"><img src="/static/images/author-photo.png" alt="" /></div>#}
+{#								<div class="comment-content"><div class="arrow-comment"></div>#}
+{#								<div class="comment-by"><strong>Sandra Fortin</strong><span class="date">7th, October 2014</span>#}
+{#								<a href="#" class="reply"><i class="fa fa-reply"></i> Reply</a>#}
+{#								</div>#}
+{#								<p>Donec porttitor tortor sit amet tortor egestas, id suscipit magna cursus. Nam facilisis, mi vel elementum porttitor, sapien magna posuere lorem, sed consectetur.</p>#}
+{#								</div>#}
+{#							</li>#}
+{#						</ul>#}
+
 					</li>
+                    {% empty %}
+                        暂无评论
+                    {% endfor %}
 				 </ul>
 
 			</section>
@@ -218,46 +191,25 @@
 		<!-- Add Comment
 		================================================== -->
 
-		<h3 class="headline">Add Review</h3><span class="line margin-bottom-35"></span><div class="clearfix"></div>
-		
-		<!-- Add Comment Form -->
-		<form id="add-review" class="add-comment">
+		<h3 class="headline">提交评论</h3><span class="line margin-bottom-35"></span><div class="clearfix"></div>
+		 {% if user.is_authenticated %}
+             <!-- Add Comment Form -->
+		<form id="add-review" class="add-comment" action="{% url "comment" %}" method="post" name="add_review">
+        {% csrf_token %}
 			<fieldset>
-
-				<div>
-					<label>Name:</label>
-					<input type="text" value=""/>
-				</div>
-					
-				<div>
-					<label>Email: <span>*</span></label>
-					<input type="text" value=""/>
-				</div>
-
-{#				<div>#}
-{#					<label>Rating:</label>#}
-{#					<span class="rate">#}
-{#						<span class="star"></span>#}
-{#						<span class="star"></span>#}
-{#						<span class="star"></span>#}
-{#						<span class="star"></span>#}
-{#						<span class="star"></span>#}
-{#					</span>#}
-{#				</div>#}
 				<div class="clearfix"></div>
-
 				<div>
-					<label>Comment: <span>*</span></label>
-					<textarea cols="40" rows="3"></textarea>
+					<label>用户<strong>{{ user }}</strong>,请输入评论内容: <span>*</span></label>
+                    <input type="hidden" name="object_id" value="{{ item.id }}">
+                    <input type="hidden" name="content_type" value="Item">
+					<textarea cols="40" rows="3" name="text"></textarea>
 				</div>
-
 			</fieldset>
-
-			<a href="#" class="button medium color">Add Review</a>
+			<a  class="button medium color" onclick="javascript:document.add_review.submit();">评论</a>
 			<div class="clearfix"></div>
-
 		</form>
-
+        {% else %}
+		    <a href="{% url "login" %}" class="medium color">未登录?点击此处跳转至登录界面</a>{% endif %}
 	</div>
 
 {% endblock %}

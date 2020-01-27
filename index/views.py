@@ -1,10 +1,12 @@
 import random
 import  requests
 from bs4 import BeautifulSoup
+from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, PageNotAnInteger, InvalidPage, EmptyPage
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import *
+from comment.models import Comment
 # Create your views here.
 def index(request):
     ranking = Item.objects.order_by('-likes')[:5]
@@ -68,7 +70,8 @@ def detail(request):
     soup = get_soup(item.url)
     main,aux,p,mea,mea_tip = spider(soup)
     recommend = random.sample(list(Item.objects.exclude(id = id).filter(series__icontains=item.series).order_by('-likes')[:10]),3)
-
+    item_content_type = ContentType.objects.get_for_model(item)
+    comments = Comment.objects.filter(content_type= item_content_type,object_id=item.id)
     return render(request,"recipe-page.html",locals())
 
 

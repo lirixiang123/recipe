@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 # from .forms import  RegisterForm, LoginForm
+from django.urls import reverse
 from django.views import View
 
 from .models import User
@@ -9,14 +10,16 @@ from .models import User
 # Create your views here.
 def user_login(request):
     if request.method == 'POST' :
-        user = authenticate(request,username = request.POST['username'],
-                     password = request.POST['password1'])
+        username = request.POST['username']
+        password =  request.POST['password1']
+        user = authenticate(request,username = username,password = password)
+        referer = request.META.get('HTTPS_REFERER','index')
         if user is None:
             messages = "用户不存在"
             return render(request,'login.html',locals())
         else:
             login(request,user)
-            return redirect('index')
+            return redirect(referer)
     else:
         return render(request,'login.html')
 

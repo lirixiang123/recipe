@@ -10,9 +10,12 @@ class Comment(models.Model):
     content_type = models.ForeignKey(ContentType, on_delete=models.DO_NOTHING)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
+
     comment_text = models.TextField()
     comment_time = models.DateTimeField(auto_now_add=True)
     comment_user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     class Meta:
+        verbose_name = "评论"
+        verbose_name_plural = verbose_name
         ordering = ['-id']

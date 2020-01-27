@@ -13,7 +13,6 @@ class Item(models.Model):
     comment = models.IntegerField()
     likes = models.IntegerField()
     series = models.CharField(verbose_name="分类",max_length=50)
-    contributor = models.ForeignKey(User, verbose_name="贡献者", null=True)
     class Meta:
         verbose_name = "菜谱"
         verbose_name_plural = verbose_name

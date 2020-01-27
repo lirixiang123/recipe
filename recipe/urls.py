@@ -19,6 +19,7 @@ from user.views import user_login,user_logout,submit,Register
 from index.views import index,search,detail
 from video.views import video
 from news.views import news,news_detail
+from comment.views import comment
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$',user_login,name='login'),
@@ -31,4 +32,5 @@ urlpatterns = [
     url(r'^submit$',submit,name='submit'),
     url(r'^news$',news,name='news'),
     url(r'^news_detail$',news_detail,name='news_detail'),
+    url(r'^comment$',comment,name='comment'),
 ]
