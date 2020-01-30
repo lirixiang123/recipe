@@ -3,4 +3,4 @@ from ckeditor.widgets import CKEditorWidget
 
 
 class CommentText(forms.Form):
-    comment_text = forms.CharField(label='', widget=CKEditorWidget(config_name='comment_ckeditor'))
+    comment_text = forms.CharField(label="",widget=CKEditorWidget())

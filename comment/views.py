@@ -10,6 +10,25 @@ from index.models import Item
 # Create your views here.
 
 
+# 错误响应的方法
+def error_response(message):
+    data = {}
+    data['status'] = 'ERROR'
+    data['message'] = message
+    return JsonResponse(data)
+
+
+# 正确响应的方法
+def success_response(comment_text, comment_user, comment_time):
+    data = {}
+    data['status'] = 'SUCCESS'
+    data['message'] = '评论成功'
+    data['comment_text'] = comment_text
+    data['comment_user'] = str(comment_user)
+    data['comment_time'] = comment_time
+    return JsonResponse(data)
+
+
 # def comment(request):
 #     # 判断用户是否登录
 #     if not request.user.is_authenticated:
@@ -36,14 +55,16 @@ from index.models import Item
 
 def comment(request):
     comment_user =request.user
-    comment_text = request.POST.get('text','')
+    comment_text = request.POST.get('comment_text','')
+    if comment_text.strip() == "":
+        message = "评论不能为空"
+        return error_response(message)
+
     content_type = request.POST.get('content_type','')
     object_id = request.POST.get('object_id','')
-    data = {}
-    data['status'] = 'SUCCESS'
-    # print(content_type)
-    # print(object_id)
-    # print(comment_text)
+    print(content_type)
+    print(object_id)
+    print(comment_text)
     model_class = ContentType.objects.get(model=content_type)
 
 
@@ -60,7 +81,8 @@ def comment(request):
     item.save()
     # referer = request.META.get('HTTP_REFERER',reverse('index'))
     # return redirect(referer)
+    comment_time = comment.comment_time.strftime('%Y-%m-%d %H:%M:%S')
 
-    return JsonResponse(data)
 
+    return success_response(comment_text, request.user, comment_time)
 

@@ -71,7 +71,7 @@
 
 				<!-- Content -->
 				<div class="recipe-box-content">
-					<h3><a href="?"><font size=2>{{ i.title }}</font> </a></h3>
+					<h3><a href="?">{{ i.title }}</a></h3>
 					
 					<div class="rating five-stars">
 {#						<div class="star-rating"></div>#}
@@ -83,7 +83,7 @@
 
                     </div>
 
-					<div class="recipe-meta"><i class="like">&#10084;</i> {{ i.likes }}</div>
+					<div class="recipe-meta"><i class="like {{ i.id }}" id="{{ i.id }}">&#10084;</i> {{ i.likes }}</div>
 
 					<div class="clearfix"></div>
 				</div>
@@ -225,4 +225,29 @@
 
 <div class="margin-top-5"></div>
 
+{% endblock %}
+
+{% block collection_ajax %}
+    <script>
+            $(".like").click(function () {
+                var id = $(".like").attr("id");
+                console.log(id);
+                 $.ajax({
+                url: "{% url 'add_collection' %}",
+                type:'GET',
+                cache:false,
+                success:function(data){
+                   console.log(data);
+                    $(".like"+id ).attr('class','cs');
+
+                },
+                error:function(xhr){
+                    console.log(xhr);
+                }
+
+            });
+            return false
+        })
+
+    </script>
 {% endblock %}

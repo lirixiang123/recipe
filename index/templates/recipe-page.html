@@ -157,11 +157,11 @@
 
 					<li>
 						<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
-						<div class="comment-content"><div class="arrow-comment"></div>
-							<div class="comment-by"><strong>{{ i.comment_user.username }}</strong>&emsp;{{ i.comment_time|date:"Y-m-d H:n:s" }}
+						<div class="comment-content" id="comment-content"><div class="arrow-comment"></div>
+							<div class="comment-by"><strong>{{ i.comment_user.username }}</strong>&emsp;{{ i.comment_time|date:"Y-m-d H:i:s" }}
 								<a href="#" class="reply"><i class="fa fa-reply"></i> 回复</a>
 							</div>
-							<p>{{ i.comment_text }}</p>
+							<p>{{ i.comment_text|safe }}</p>
 						</div>
 
 {#						<!-- Second Level -->#}
@@ -202,10 +202,8 @@
 					<label>用户<strong>{{ user }}</strong>,请输入评论内容: <span>*</span></label>
                     <input type="hidden" name="object_id" value="{{ item.id }}">
                     <input type="hidden" name="content_type" value="Item">
-					<textarea cols="40" rows="3" name="text"></textarea>
-{#                    {% for i in form %}#}
-{#                        {{ i }}#}
-{#                    {% endfor %}#}
+{#					<textarea cols="40" rows="3" name="text"></textarea>#}
+                    {{ form.as_p }}
 
 				</div>
 			</fieldset>
@@ -222,9 +220,12 @@
 {% endblock %}
 
 {% block script_ajax  %}
-
+    {% load static %}
+    <script type="application/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="application/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
     <script type="application/javascript">
         $("#add-review").submit(function(){
+            CKEDITOR.instances["id_comment_text"].updateElement();
             //异步提交
             $.ajax({
                 url: "{% url 'comment' %}",
@@ -232,7 +233,14 @@
                 data:$(this).serialize(),
                 cache:false,
                 success:function(data){
-                    alert(data)
+                    console.log(data);
+                    if(data['status']=='SUCCESS'){
+                    var comment_html = '<div class="arrow-comment"></div><div class="comment-by"><strong>'+data["comment_user"]+'</strong>&emsp;'+data["comment_time"]+'<a href="#" class="reply"><i class="fa fa-reply"></i> 回复</a> </div> <p>'+data["comment_text"]+'</p>';
+                    $('#comment-content').prepend(comment_html);
+                    CKEDITOR.instances["id_comment_text"].setData("");
+                    }else{
+
+                    }
                 },
                 error:function(xhr){
                     console.log(xhr);
