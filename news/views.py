@@ -27,7 +27,7 @@ def get_soup(url = 'https://www.meishichina.com/News/'):
 
     res = requests.get(url=url, headers= header)
     res.encoding = 'utf-8'
-    soup = BeautifulSoup(res.text, 'lxml')
+    soup = BeautifulSoup(res.text, 'html.parser')
     return soup
 
 def news_spider():

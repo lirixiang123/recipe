@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
-from user.views import user_login,user_logout,submit,Register
+from user.views import user_login,user_logout,submit,Register,test
 from index.views import index,search,detail,add_collection
 from video.views import video
 from news.views import news,news_detail
@@ -37,5 +37,6 @@ urlpatterns = [
     url(r'^comment$',comment,name='comment'),
     url(r'^add_collection$',add_collection,name='add_collection'),
     url('ckeditor',include('ckeditor_uploader.urls')),
+    url(r'^test$',test,name='test'),
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

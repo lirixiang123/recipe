@@ -32,7 +32,7 @@ $(document).ready(function() {
    <form name="login" action="{% url 'login' %}" method="post">
             {% csrf_token %}
      <p class="p user_icon">
-       <input type="text" placeholder="账号" autocomplete="off" class="login_txtbx" name="username">
+      <input type="text" placeholder="账号" autocomplete="off" class="login_txtbx" name="username" id="username"><p  style="color:#FFFFFF" id="userinfo"></p>
      </p>
      <p class="p pwd_icon">
        <input type="password" placeholder="密码" autocomplete="off" class="login_txtbx" name="password1">
@@ -46,7 +46,6 @@ $(document).ready(function() {
       </div>
        <a href="{% url "register" %}"  style="color:#FFFFFF"><p>没有账号?点击注册</p></a>
       <div class="signup">
-
         <a class="gv" onclick="validate();javascript:document.login.submit();"  >登&nbsp;&nbsp;录</a>
           <a class="gv" onclick="javascript:document.login.reset();" >清&nbsp;&nbsp;空</a>
      </div>
@@ -160,6 +159,28 @@ function animation() {
 
 animation();
 </script>
-
 </body>
+<script type="text/javascript">
+    $("#username").focus(function(){
+        $("#userinfo").html("设置后不可更改,中英文均可,最长14个英文或7个汉字");
+    });
+    $("#username").blur(function(){
+        // this => 在事件监控器中，默认有一个this的变量，表示的监听的对象本身
+        // 当输入为空时，删除提示的信息
+        console.log(this.value);
+        user_span = $("#userinfo");
+        reg = /^[\w\d_]{8,18}$/i;
+        if(this.value.length == 0){
+            user_span.html("")
+        }else if (this.value.length <8 || this.value.length > 18){
+            user_span.html("<img src='/static/img/err_small.png'>长度不合规范");
+        }else if (reg.test(this.value)){
+            user_span.html("<img src='/static/img/ok_small.png'>用户名合法");
+            //  当用户名合法时，还需要去服务器检查用户是否已经被注册了
+        }else{
+            user_span.html("<img src='/static/img/err_small.png'>用户名命名的字符不符合规范");
+        }
+
+    })
+</script>
 </html>

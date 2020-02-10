@@ -142,6 +142,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),  # 静态文件存放位置
 ]
 
+
+STATIC_ROOT =  os.path.join(BASE_DIR,'allstatic')
+
 #配置media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")

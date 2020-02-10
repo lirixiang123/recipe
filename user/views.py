@@ -52,3 +52,6 @@ class Register(View):
 def submit(request):
     return render(request,"submit-recipe.html")
 
+def test(request):
+    return render(request,"12.1-js-注册表单js功能.html")
+
