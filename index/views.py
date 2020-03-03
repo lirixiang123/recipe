@@ -3,7 +3,7 @@ import  requests
 from bs4 import BeautifulSoup
 from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, PageNotAnInteger, InvalidPage, EmptyPage
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from .models import *
 from comment.models import Comment
@@ -140,4 +140,4 @@ def add_collection(request):
     data ={}
     data['status'] = 'success'
     data['a'] = 'uiqwefgi'
-    return HttpResponse(data)
+    return JsonResponse(data)

@@ -230,7 +230,6 @@
 {% block collection_ajax %}
     <script>
             $(".like").click(function () {
-                var id = $(".like").attr("id");
                 console.log(id);
                  $.ajax({
                 url: "{% url 'add_collection' %}",

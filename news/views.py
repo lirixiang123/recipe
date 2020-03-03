@@ -15,7 +15,10 @@ def news_detail(request):
     id= int(id)-1
     link = soup.select('div.detail a')[id]['href']
     soup = get_soup(link)
-    title = soup.select('div.main a')[0].get_text()
+    try:
+        title = soup.select('div.main a')[0].get_text()
+    except Exception as e:
+        title = ""
     contents = soup.select('div.content p')
     content=" ".join(repr(i) for i in contents)
     return render(request,"news_detail.html",locals())

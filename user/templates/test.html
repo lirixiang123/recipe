@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="app1">
+    这里是一些内容:{message?"yes":"no"}
+    {message.split("").reverse().join()}
+    {reverseMessage()}
+</div>
+<div id="app2">
+    <p v-once>{message}</p>
+    这里是一些内容2{message}
+    <p v-html="awhtml"></p>
+</div>
+<button type="button" id="app">点我</button>
+<script type="text/javascript">
+    data = {
+        "message":"欢迎",
+        "awhtml":"<b>加粗的字体</b>"
+    };
+    var app1 = new Vue({
+        el:"#app1",
+        data:data,
+        delimiters: ['{', '}'],
+{#        computed: {reverseMessage: function(){#}
+{#                        return this.message.split("").reverse().join();#}
+{#                        return Date.now()#}
+{#    }},#}
+         methods:{
+                    reverseMessage: function(){
+                        return this.message.split('').reverse().join()
+                        return Data.now()
+                    }
+                }
+    })
+    var app2 = new Vue({
+        el:"#app2",
+        data:data,
+        delimiters: ['{', '}'],
+    })
+</script>
+ <script>
+            $("#app").click(function () {
+                 $.ajax({
+                url: "{% url 'add_collection' %}",
+                dataType:"json",
+                success:function(data){
+                   console.log(JSON.paese(data));
+                },
+                error:function(xhr){
+                    console.log(xhr);
+                }
+
+            });
+            return false
+        })
+
+    </script>
+</body>
+</html>

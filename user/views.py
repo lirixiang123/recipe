@@ -34,8 +34,6 @@ class Register(View):
     def post(self, request):
         if request.method == 'POST' :
             form = UserCreationForm(request.POST)
-            print(form.error_messages)
-            # print(form)
             if form.is_valid():
                 username = form.cleaned_data['username']
                 password = form.cleaned_data['password1']
@@ -47,11 +45,13 @@ class Register(View):
                     login(request,user)
                     return redirect('index')
             form = UserCreationForm()
+            if form.error_messages:
+                errors=form.error_messages
             return render(request,'register.html',locals())
 
 def submit(request):
     return render(request,"submit-recipe.html")
 
 def test(request):
-    return render(request,"12.1-js-注册表单js功能.html")
+    return render(request,"test.html")
 
