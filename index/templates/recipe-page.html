@@ -25,7 +25,7 @@
 				<span><a href="#reviews"></a></span>
 			</div>
 		</section>
-		
+
 
 		<!-- Slider -->
 		<div class="recipeSlider rsDefault">
@@ -97,7 +97,7 @@
 {#		</ul>#}
 		<div class="clearfix"></div>
 
-		
+
 		<!-- Meta -->
 <!--  		<div class="post-meta">
 			By <a href="#" itemprop="author">Sandra Fortin</a>, on
@@ -147,7 +147,7 @@
 		<!-- Comments
 		================================================== -->
 		<h3 class="headline">全部评论({{ item.comment }})<span class="comments-amount"></span></h3><span class="line"></span><div class="clearfix"></div>
-		
+
 			<!-- Reviews -->
 			<section class="comments" id="reviews">
 
@@ -192,7 +192,7 @@
 		================================================== -->
 
 		<h3 class="headline">提交评论</h3><span class="line margin-bottom-35"></span><div class="clearfix"></div>
-		 {% if user.is_authenticated %}
+
              <!-- Add Comment Form -->
 		<form id="add-review" class="add-comment" action="" method="post" name="add_review">
         {% csrf_token %}
@@ -213,8 +213,8 @@
 
 			<div class="clearfix"></div>
 		</form>
-        {% else %}
-		    <a href="{% url "login" %}" class="medium color">未登录?点击此处跳转至登录界面</a>{% endif %}
+
+		    <a href="{% url "login" %}" class="medium color">未登录?点击此处跳转至登录界面</a>
 	</div>
 
 {% endblock %}
