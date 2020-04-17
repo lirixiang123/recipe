@@ -1,5 +1,25 @@
 {% extends "base.html" %}
 {% block body %}
+<section id="titlebar">
+	<!-- Container -->
+	<div class="container">
+
+		<div class="eight columns">
+			<h2>Shop</h2>
+		</div>
+
+		<div class="eight columns">
+			<nav id="breadcrumbs">
+				<ul>
+					<li>你在:</li>
+					<li><a href="{% url "index" %}">主页</a></li>
+				</ul>
+			</nav>
+		</div>
+
+	</div>
+	<!-- Container / End -->
+</section>
 <!-- Slider
 ================================================== -->
 
@@ -143,17 +163,7 @@
 		<div class="clearfix"></div>
 	</div>
 
-{#作者框#}
-{#	<!-- Author Box -->#}
-{#	<div class="widget">#}
-{#		<div class="author-box">#}
-{#			<span class="title">Author</span>#}
-{#			<span class="name">Sandra <br> Fortin</span>#}
-{#			<span class="contact"><a href="mailto:sandra@chow.com">sandra@chow.com</a></span>#}
-{#			<img src="/static/images/author-photo.png" alt="">#}
-{#			<p>I'm Sandra and this is where I share my stuff. I am madly in love with food. You will find a balance of healthy recipes, comfort food and indulgent desserts.</p>#}
-{#		</div>#}
-{#	</div>#}
+
 
 
 	<!-- Popular Recipes -->
@@ -166,7 +176,7 @@
         {% for i in ranking  %}
 		<a href="{%url "detail" %}?id={{ i.id }}" class="featured-recipe">
 {#			<img src="/static/images/featuredRecipe-01.jpg" alt="">#}
-            <img src="{{ i.image_url }}" alt="">
+{#            <img src="{{ i.image_url }}" alt="">#}
 			<div class="featured-recipe-content">
 				<h4> {{ forloop.counter }} {{ i.title }}</h4>
 

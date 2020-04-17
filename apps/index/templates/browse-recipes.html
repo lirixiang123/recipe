@@ -2,6 +2,27 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block body %}
+<section id="titlebar">
+	<!-- Container -->
+	<div class="container">
+
+		<div class="eight columns">
+			<h2>news</h2>
+		</div>
+
+		<div class="eight columns">
+			<nav id="breadcrumbs">
+				<ul>
+					<li>你在:</li>
+					<li><a href="{% url "index" %}">主页</a></li>
+					<li>搜索</li>
+				</ul>
+			</nav>
+		</div>
+
+	</div>
+	<!-- Container / End -->
+</section>
 <!-- Titlebar
 ================================================== -->
 <section id="titlebar" class="browse-all">
@@ -122,7 +143,7 @@
 						<option value="2">Any of selected ingredients</option>
 					</select>
 				</div>
-				
+
 				<div class="clearfix"></div>
 
 				<!-- Search Input -->

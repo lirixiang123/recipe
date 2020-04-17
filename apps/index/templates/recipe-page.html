@@ -11,7 +11,8 @@
 <div class="container" itemscope itemtype="http://schema.org/Recipe">
 
 	<!-- Recipe -->
-	<div class="twelve columns">
+
+	<div class="ten columns">
 	<div class="alignment">
 
 		<!-- Header -->
@@ -40,51 +41,53 @@
 				<li>点赞: <strong itemprop="recipeYield">{{ item.likes }}</strong></li>
 				<li>评论: <strong itemprop="prepTime">{{ item.comment }}</strong></li>
 				<li>标签: <strong itemprop="cookTime">{{ item.series }}</strong></li>
-				<li>Calories: <strong itemprop="calories">632 kcal</strong></li>
 			</ul>
-			<a href="#" class="print"><i class="fa fa-print"></i> Print</a>
+			<a href="#" class="print"><i class="fa fa-print"></i>喜欢</a>
 			<div class="clearfix"></div>
 		</section>
 
 
 		<!-- Text -->
 		<p itemprop="description">{{ p }}</p>
-
-
-		<!-- Ingredients -->
+          </div>
+        </div>
+         <div class="four column">
+        <!-- Ingredients -->
 		<h3>用料</h3>
 		<ul class="ingredients">
 
             {% for k,v in main.items %}
 			<li>
 
-				<label itemprop="ingredients" for="check-1">主料{{ forloop.counter }}:&emsp;{{ v }}</label>
+				主料{{ forloop.counter }}:&emsp;{{ v }}
 			</li>
             {% endfor %}
             {% for i in aux %}
             <li>
 
-				<label itemprop="ingredients" for="check-1">辅料{{ forloop.counter }}:&emsp;{{ i }}</label>
+			辅料{{ forloop.counter }}:&emsp;{{ i }}
 			</li>
             {% endfor %}
 		</ul>
+        </div>
 
 
+        <div class="ten column">
 		<!-- Directions -->
 		<h3>做法</h3>
 		<ol class="directions" itemprop="recipeInstructions">
-            {% for k,v in mea.items %}
-			<li >{{ k }}</li>
+            {% for k,v in mea.items %}<br>
+			{{ k }}
             <div style="width: 400px; border: 1px solid #000; height: auto;">
             <img  src="{{ v }}" style="width: 380px; margin: 10px;" alt="">
             </div>
 
             {% endfor %}
         {% for i in mea_tip %}
-             <li >{{ i }}</li>
+            {{ i }}<br>
         {% endfor %}
 		</ol>
-
+        </div>
 
 {#		<!-- Share Post -->#}
 {#		<ul class="share-post">#}
@@ -135,9 +138,10 @@
 				</div>
 			</div>
   {% endfor %}
-				</div>
-			</div>
-		</div>
+        </div>
+
+
+
 		<div class="clearfix"></div>
 
 

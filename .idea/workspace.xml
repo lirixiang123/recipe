@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd66f65-4a9e-4373-9928-484d81ccfa9a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/apps/shop/templates/product-page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/shop/templates/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/comment/templates/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/comment/templates/community.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/index/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/index/templates/browse-recipes.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/browse-recipes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/index/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/index/templates/recipe-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/recipe-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/news/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/templates/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/video/templates/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/video/templates/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +54,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/shop/templates" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -55,18 +66,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\86132\Desktop\recipe\apps" />
       <recent name="C:\Users\86132\Desktop\recipe\apps\news\templates" />
       <recent name="C:\Users\86132\Desktop\recipe\libs" />
-      <recent name="C:\Users\86132\Desktop\recipe\apps" />
       <recent name="C:\Users\86132\Desktop\recipe\user\templates" />
       <recent name="C:\Users\86132\Desktop\recipe\user\static\img" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\86132\Desktop\recipe\apps\shop\templates" />
       <recent name="C:\Users\86132\Desktop\recipe\apps\index\templates" />
       <recent name="C:\Users\86132\Desktop\recipe\apps\user" />
       <recent name="C:\Users\86132\Desktop\recipe\apps\index" />
       <recent name="C:\Users\86132\Desktop\recipe\apps\comment" />
-      <recent name="C:\Users\86132\Desktop\recipe\apps\video" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -288,7 +299,7 @@
       <workItem from="1587049682885" duration="3997000" />
       <workItem from="1587085289294" duration="532000" />
       <workItem from="1587085841892" duration="1913000" />
-      <workItem from="1587087783706" duration="32520000" />
+      <workItem from="1587087783706" duration="37583000" />
     </task>
     <servers />
   </component>

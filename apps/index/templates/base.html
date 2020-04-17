@@ -65,6 +65,8 @@
 
             <li><a href="{%  url  'community' %}" id="{% if request.path == "/community" %}current{% endif %}">美食社区</a></li>
 
+            <li><a href="{%  url  'shop' %}" id="{% if request.path == "/shop" %}current{% endif %}">美食商店</a></li>
+
             <li><a href="{% url "news" %}" id="{% if request.path == "/news" %}current{% endif %}">美食资讯</a></li>
 
 			<li><a href="{%  url  'search' %}" id="{% if request.path == "/search" %}current{% endif %}">美食搜索</a></li>

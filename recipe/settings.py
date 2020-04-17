@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.video',
     'apps.news',
     'apps.comment',
+    'apps.shop',
     'ckeditor',
     'ckeditor_uploader',
 
