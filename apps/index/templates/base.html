@@ -58,13 +58,14 @@
 
 			<li><a href="{% url 'index' %}" id="{% if request.path == "/" %}current{% endif %}" >主页</a></li>
 
+            <li><a href="{%  url  'video' %}" id="{% if request.path == "/video" %}current{% endif %}">美食视频</a></li>
+        
             <li><a href="{%  url  'community' %}" id="{% if request.path == "/community" %}current{% endif %}">美食社区</a></li>
 
             <li><a href="{% url "news" %}" id="{% if request.path == "/news" %}current{% endif %}">美食资讯</a></li>
 
 			<li><a href="{%  url  'search' %}" id="{% if request.path == "/search" %}current{% endif %}">美食搜索</a></li>
 
-            <li><a href="{%  url  'video' %}" id="{% if request.path == "/video" %}current{% endif %}">美食视频</a></li>
 
 
 			<li><a href="#">你好,{{ user }}</a>
