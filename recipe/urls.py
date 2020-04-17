@@ -17,17 +17,18 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
-from user.views import user_login,user_logout,submit,Register,test
-from index.views import index,search,detail,add_collection
-from video.views import video
-from news.views import news,news_detail
-from comment.views import comment
+from apps.user.views import user_login,user_logout,submit,Register,test
+from apps.index.views import index,search,detail,add_collection
+from apps.video.views import video
+from apps.news.views import news,news_detail
+from apps.comment.views import comment,community
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$',user_login,name='login'),
     url(r'^logout/$',user_logout,name='logout'),
     url(r'^register/$',Register.as_view(),name='register'),
     url(r'^$',index,name='index'),
+
     url(r'^search$',search,name='search'),
     url(r'^detail$',detail,name='detail'),
     url(r'^video$',video,name='video'),
@@ -38,5 +39,6 @@ urlpatterns = [
     url(r'^add_collection$',add_collection,name='add_collection'),
     url('ckeditor',include('ckeditor_uploader.urls')),
     url(r'^test$',test,name='test'),
+    url(r'^community',community,name='community')
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

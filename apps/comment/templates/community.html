@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+    <div class="container">
+
+<h3 class="headline">最新评论<span class="comments-amount"></span></h3><span class="line"></span><div class="clearfix"></div>
+
+			<!-- Reviews -->
+			<section class="comments" id="reviews">
+                {% for i in comments %}
+				<ul>
+
+					<li>
+						<div class="avatar"><img src="" alt="" /></div>
+						<div class="comment-content" id="comment-content"><div class="arrow-comment"></div>
+							<div class="comment-by"><strong>{{ i.comment_user.username }}</strong>&emsp;{{ i.comment_time|date:"Y-m-d H:i:s" }}
+								<a href="#" class="reply"><i class="fa fa-reply"></i> 回复</a>
+							</div>
+							<p>{{ i.comment_text|safe }}</p>
+						</div>
+
+{#						<!-- Second Level -->#}
+{#						<ul>#}
+{#							<li>#}
+{#								<div class="avatar"><img src="/static/images/author-photo.png" alt="" /></div>#}
+{#								<div class="comment-content"><div class="arrow-comment"></div>#}
+{#								<div class="comment-by"><strong>Sandra Fortin</strong><span class="date">7th, October 2014</span>#}
+{#								<a href="#" class="reply"><i class="fa fa-reply"></i> Reply</a>#}
+{#								</div>#}
+{#								<p>Donec porttitor tortor sit amet tortor egestas, id suscipit magna cursus. Nam facilisis, mi vel elementum porttitor, sapien magna posuere lorem, sed consectetur.</p>#}
+{#								</div>#}
+{#							</li>#}
+{#						</ul>#}
+
+					</li>
+
+				 </ul>
+                {% empty %}
+                    暂无评论
+                {% endfor %}
+			</section>
+			<div class="clearfix"></div>
+			<br>
+
+
+
+		<!-- Add Comment
+		================================================== -->
+
+		<h3 class="headline">提交评论</h3><span class="line margin-bottom-35"></span><div class="clearfix"></div>
+
+             <!-- Add Comment Form -->
+		<form id="add-review" class="add-comment" action="" method="post" name="add_review">
+        {% csrf_token %}
+			<fieldset>
+				<div class="clearfix"></div>
+				<div>
+					<label>用户<strong>{{ user }}</strong>,请输入评论内容: <span>*</span></label>
+                    <input type="hidden" name="object_id" value="{{ user.id }}">
+                    <input type="hidden" name="content_type" value="User">
+{#					<textarea cols="40" rows="3" name="text"></textarea>#}
+                    {{ form.as_p }}
+
+				</div>
+			</fieldset>
+{#			<a  class="button medium color" onclick="javascript:document.add_review.submit();">评论</a>#}
+
+            <input type="submit" style="min-width: 40px;" value="评论" >
+
+			<div class="clearfix"></div>
+		</form>
+
+		    <a href="{% url "login" %}" class="medium color">未登录?点击此处跳转至登录界面</a>
+
+     <script type="application/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="application/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+    <script type="application/javascript">
+        $("#add-review").submit(function(){
+            CKEDITOR.instances["id_comment_text"].updateElement();
+            //异步提交
+            $.ajax({
+                url: "{% url 'comment' %}",
+                type:'POST',
+                data:$(this).serialize(),
+                cache:false,
+                success:function(data){
+                    console.log(data);
+                    if(data['status']=='SUCCESS'){
+                    var comment_html = '<ul><li><div class="avatar"><img src="" alt="" /></div> ' +
+                        '<div class="comment-content" id="comment-content"><div class="arrow-comment"></div>' +
+                        '<div class="comment-by"><strong>'+data["comment_user"]+'</strong>&emsp;'+
+                        data["comment_time"]+'<a href="#" class="reply"><i class="fa fa-reply"></i> 回复</a> </div> <p>'+
+                        data["comment_text"]+'</p></div></li></ul>';
+                    $('#reviews').prepend(comment_html);
+                    CKEDITOR.instances["id_comment_text"].setData("");
+                    }
+                },
+                error:function(xhr){
+                    console.log(xhr);
+                }
+
+            });
+            return false
+        });
+    </script>
+</div>
+
+{% endblock %}

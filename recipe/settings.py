@@ -29,7 +29,6 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,10 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user',
-    'index',
-    'video',
-    'comment',
+    'apps.user',
+    'apps.index',
+    'apps.video',
+    'apps.comment',
     'ckeditor',
     'ckeditor_uploader',
 
@@ -148,6 +147,13 @@ STATIC_ROOT =  os.path.join(BASE_DIR,'allstatic')
 #配置media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# 单位：px
+THUMB_SIZE = 70
+if not os.path.exists(MEDIA_ROOT):
+    os.mkdir(MEDIA_ROOT)
+
+# 修改上传文件大小（Default: 2621440 (i.e. 2.5 MB).）
+DATA_UPLOAD_MAX_MEMORY_SIZE = 2621440*10
 
 #配置ckeditor
 CKEDITOR_UPLOAD_PATH = 'upload/'

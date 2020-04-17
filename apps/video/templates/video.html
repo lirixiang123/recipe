@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container">
+     <!-- Search Input -->
+        <div class="sixteen columns">
+				<nav class="search-by-keyword">
+					<form action="{% url "video" %}" method="get">
+                        {% csrf_token %}
+						<input class="search-field" type="text" placeholder="请输入关键字..." value="" name="q"/>
+                        <button>搜索<i class="fa fa-search"></i></button>
+					</form>
+				</nav>
+				<div class="clearfix"></div>
+            </div>
+    </div>
+	<div class="container">
+
+		<ul class="demo-list">
+            {% for k,v in videos.items %}
+            <li class="demo-list__item">
+            {% autoescape off %}
+				<p>{{ v }}</p>
+            {% endautoescape %}
+                <iframe src="https://player.bilibili.com/player.html?aid={{ k }}&page=1&as_wide=1&&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px; height: 280px; max-width: 100%"> </iframe>
+			</li>
+            {% endfor %}
+
+		</ul>
+	</div>
+
+{% endblock %}
