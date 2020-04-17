@@ -139,12 +139,11 @@ USE_TZ = True
 # 静态文件以/static/开头
 STATIC_URL = '/static/'
 # 静态文件查找路径，注意不要写错参数名
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),  # 静态文件存放位置
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),  # 静态文件存放位置
+# ]
 
-
-STATIC_ROOT =  os.path.join(BASE_DIR,'allstatic')
+STATIC_ROOT =  os.path.join(BASE_DIR, 'allstatic')
 
 #配置media
 MEDIA_URL = '/media/'

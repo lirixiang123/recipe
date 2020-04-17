@@ -3921,7 +3921,7 @@ ul.categories li a:hover span { color: #fff; }
 .featured-recipe-content h4 {
 	font-size: 14px;
 	line-height: 18px;
-	color: #fff;
+	color: #000;
 	font-weight: 700;
 	width: 100%;
 }
@@ -6127,7 +6127,7 @@ ol.directions > li:before {
 	}
 
 	a.blockTitle { font-size: 19px; line-height: 26px; }
-	
+
 	.isotope-box {margin-bottom: 20px !important;}
 
 	.product-page { padding: 25px 0 0 0; }
@@ -6206,7 +6206,7 @@ ol.directions > li:before {
 		margin: 5px 0 -5px 1px;
 		font-weight: 600;
 	}
-	
+
 	#style-switcher {
 		background: #606060;
 		width:205px;
@@ -6215,11 +6215,11 @@ ol.directions > li:before {
 		z-index:9999;
 		left: -205px;
 	}
-	
+
 	#style-switcher div {
 		padding: 2px 18px 10px 18px;
 	}
-	
+
 	#style-switcher h2 {
 		background-color: #505050;
 		color: #fff;
@@ -6227,7 +6227,7 @@ ol.directions > li:before {
 		font-size: 14px;
 		padding: 7px 0 6px 20px;
 	}
-	
+
 	#style-switcher h2 a {
 		background: url("../images/switcher.png") no-repeat 9px center transparent;
 		background-color: #505050;
@@ -6239,25 +6239,25 @@ ol.directions > li:before {
 		top: 0;
 		width: 43px;
 	}
-	
+
 	.colors {
 		list-style:none;
 		margin: 0 0px 10px 0;
 		overflow: hidden;
 	}
-	
+
 	.colors li {
 		float:left;
 		margin: 4px 2px 0 2px;
 	}
-	
+
 	.colors li a {
 		display: block;
 		width: 17px;
 		height: 17px;
 		cursor: pointer;
-	} 
-	
+	}
+
 	div.layout-style {
 		padding:0 !important;
 	}
@@ -6270,7 +6270,7 @@ ol.directions > li:before {
 		font-size: 13px;
 		margin: 2px 0 10px 2px;
 	}
-	
+
 	.green, .green-bg { background: #8dc63f; }
 	.blue, .blue-bg { background: #2db2ea; }
 	.orange, .orange-bg {background: #fa5b0f; }
@@ -6313,10 +6313,40 @@ ol.directions > li:before {
 	#reset a.button {
 		padding: 7px 14px;
 		font-weight: 700;
-		font-size: 13px; 
+		font-size: 13px;
 		color: #fff;
 	}
 
 	#reset a.button:hover { background-color: #a0a0a0 !important; }
-	
+
 	@media only screen and (max-width: 1024px) { #style-switcher { display: none; } }
+.w705{width:702px;}
+.fl {
+    float: left;
+}
+
+.focus{ position:relative; width:702px; height:428px; }
+.focus img{ width:702px; height:428px;}
+.focus .shadow .title{width: 260px; height: 65px;padding-left: 30px;padding-top: 20px;}
+.focus .shadow .title a{ text-decoration:none; color:#fff; font-size:14px; font-weight:bolder; overflow:hidden; }
+.focus .btn{ position:absolute; bottom:34px; left:510px; overflow:hidden; zoom:1;}
+.focus .btn a{position:relative; display:inline; width:13px; height:13px; border-radius:7px; margin:0 5px;color:#B0B0B0;font:12px/15px "\5B8B\4F53"; text-decoration:none; text-align:center; outline:0; float:left; background:#D9D9D9; }
+.focus .btn a:hover,.focus .btn a.current{  cursor:pointer;background:#fc114a;}
+.focus .fPic{ position:absolute; left:0px; top:0px; }
+.focus .D1fBt{ overflow:hidden; zoom:1;  height:16px; z-index:10;  }
+.focus .shadow{ width:100%; position:absolute; bottom:0; left:0px; z-index:10; height:80px; line-height: 80px; background:rgba(0,0,0,0.6);
+filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorstr = '#80000000',endColorstr = '#80000000')\9;  display:block;  text-align:left; }
+.focus .shadow a{ text-decoration:none; color:#fff; font-size:20px; overflow:hidden; margin-left:10px; font-family: "\5FAE\8F6F\96C5\9ED1";}
+.focus .fcon{ position:relative; width:100%; float:left;  display:none; background:#000  }
+.focus .fcon img{ display:block; }
+.focus .fbg{bottom:25px; right:40px; position:absolute; height:21px; text-align:center; z-index: 200; }
+.focus .fbg div{margin:4px auto 0;overflow:hidden;zoom:1;height:14px}
+.focus .D1fBt a{position:relative; display:inline; width:12px; height:12px; border-radius:7px; margin:0 5px;color:#B0B0B0;font:12px/15px "\5B8B\4F53"; text-decoration:none; text-align:center; outline:0; float:left; background:#D9D9D9; }
+.focus .D1fBt .current,.focus .D1fBt a:hover{background:#fc114a;}
+.focus .D1fBt img{display:none}
+.focus .D1fBt i{display:none; font-style:normal; }
+.focus .prev,.focus .next{position:absolute;width:40px;height:74px;background: url(../images/focus_btn.png) no-repeat;}
+.focus .prev{top: 50%;margin-top: -37px; left: 0;background-position:0 -74px; cursor:pointer; }
+.focus .next{top: 50%;margin-top: -37px; right: 0;  background-position:-40px -74px;  cursor:pointer;}
+.focus .prev:hover{  background-position:0 0; }
+.focus .next:hover{  background-position:-40px 0;}
