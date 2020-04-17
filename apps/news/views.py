@@ -14,25 +14,10 @@ def news(request):
     contents = soup.select('div.content p')
     #print(contents)
     content=" ".join(repr(i) for i in contents)
-    print(content)
+    #print(content)
     return render(request, "news.html", locals())
 
-# def news_detail(request):
-#     """资讯详情页"""
-#     soup = get_soup()
-#     id = request.GET.get("id")
-#     # print(id)
-#     # print(type(id))
-#     id= int(id)-1
-#     link = soup.select('div.detail a')[id]['href']
-#     soup = get_soup(link)
-#     try:
-#         title = soup.select('div.main a')[0].get_text()
-#     except Exception as e:
-#         title = ""
-#     contents = soup.select('div.content p')
-#     content=" ".join(repr(i) for i in contents)
-#     return render(request, "news_detail.html", locals())
+
 
 def get_soup(url = 'https://www.meishichina.com/News/'):
 

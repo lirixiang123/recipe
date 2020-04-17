@@ -3,15 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fbd66f65-4a9e-4373-9928-484d81ccfa9a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/comment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/comment/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/index/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/index/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/index/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/templates/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/index/templates/news_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/index/templates/submit-recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/submit-recipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/index/templates/recipe-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/recipe-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/index/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -297,7 +293,7 @@
       <workItem from="1587049682885" duration="3997000" />
       <workItem from="1587085289294" duration="532000" />
       <workItem from="1587085841892" duration="1913000" />
-      <workItem from="1587087783706" duration="27913000" />
+      <workItem from="1587087783706" duration="31474000" />
     </task>
     <servers />
   </component>

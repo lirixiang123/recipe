@@ -41,7 +41,7 @@ def index(request):
         #print(i.url)
         t = threading.Thread(target=get_extra,args=(i,))
         t.start()
-        #t.join()
+        t.join()
     all = random.sample(list(Item.objects.all()),27)
      # 将数据按照规定每页显示 10 条, 进行分割
     paginator = Paginator(all,9)

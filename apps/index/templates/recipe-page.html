@@ -151,8 +151,8 @@
 			<!-- Reviews -->
 			<section class="comments" id="reviews">
 
-				<ul>
                     {% for i in comments %}
+				<ul>
 
 
 					<li>
@@ -178,10 +178,11 @@
 {#						</ul>#}
 
 					</li>
+                         </ul>
                     {% empty %}
                         暂无评论
                     {% endfor %}
-				 </ul>
+
 
 			</section>
 			<div class="clearfix"></div>
@@ -216,11 +217,7 @@
 
 		    <a href="{% url "login" %}" class="medium color">未登录?点击此处跳转至登录界面</a>
 	</div>
-
-{% endblock %}
-
-{% block script_ajax  %}
-    {% load static %}
+     {% load static %}
     <script type="application/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
     <script type="application/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
     <script type="application/javascript">
@@ -235,8 +232,12 @@
                 success:function(data){
                     console.log(data);
                     if(data['status']=='SUCCESS'){
-                    var comment_html = '<div class="arrow-comment"></div><div class="comment-by"><strong>'+data["comment_user"]+'</strong>&emsp;'+data["comment_time"]+'<a href="#" class="reply"><i class="fa fa-reply"></i> 回复</a> </div> <p>'+data["comment_text"]+'</p>';
-                    $('#comment-content').prepend(comment_html);
+                    var comment_html = '<ul><li><div class="avatar"><img src="" alt="" /></div> ' +
+                        '<div class="comment-content" id="comment-content"><div class="arrow-comment"></div>' +
+                        '<div class="comment-by"><strong>'+data["comment_user"]+'</strong>&emsp;'+
+                        data["comment_time"]+'<a href="#" class="reply"><i class="fa fa-reply"></i> 回复</a> </div> <p>'+
+                        data["comment_text"]+'</p></div></li></ul>';
+                    $('#reviews').prepend(comment_html);
                     CKEDITOR.instances["id_comment_text"].setData("");
                     }else{
 
@@ -250,4 +251,6 @@
             return false
         });
     </script>
+
 {% endblock %}
+
