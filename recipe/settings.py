@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'apps.user',
     'apps.index',
     'apps.video',
+    'apps.news',
     'apps.comment',
     'ckeditor',
     'ckeditor_uploader',

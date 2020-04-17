@@ -5,8 +5,7 @@
 
 	<!-- Accordion
 	================================================== -->
-
-	<div class="eleven columns">
+	<div class="four columns">
 		<h3 class="headline">最热资讯</h3><span class="line margin-bottom-35"></span><div class="clearfix"></div>
 
 			<!-- Accordion -->
@@ -14,26 +13,22 @@
 
 				<!-- Section 1 -->
                 {% for k,v in news.items %}
-				<h3><span class="ui-accordion-header-icon ui-icon ui-accordion-icon"></span>{{ forloop.counter }}&emsp;{{ k }}</h3>
+                    <h3><span class="ui-accordion-header-icon ui-icon ui-accordion-icon"></span>{{ forloop.counter }}&emsp;<b>{{ k }}</b></h3>
 				<div>
-					<a href="{% url "news_detail" %}?id={{ forloop.counter }}"><p>{{ v }}</p></a>
+					<a href="{% url "news" %}?id={{ forloop.counter }}"><p>{{ v }}</p></a>
 				</div>
                 {% endfor %}
 			</div>
 			<!-- Accordion / End -->
 	</div>
+        <div class="twelve columns">
+		<h1 align="center"><strong>{{ title }}</strong></h1>
 
-
-
-
-
-
-
+            {% autoescape off %}
+            {{ content }}
+            {% endautoescape %}
+        </div>
 </div>
-<!-- Container / End -->
-
-
-<div class="margin-top-40"></div>
 
 
 

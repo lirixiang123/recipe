@@ -20,7 +20,7 @@ from django.contrib import admin
 from apps.user.views import user_login,user_logout,submit,Register,test
 from apps.index.views import index,search,detail,add_collection
 from apps.video.views import video
-from apps.news.views import news,news_detail
+from apps.news.views import news
 from apps.comment.views import comment,community
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -34,7 +34,6 @@ urlpatterns = [
     url(r'^video$',video,name='video'),
     url(r'^submit$',submit,name='submit'),
     url(r'^news$',news,name='news'),
-    url(r'^news_detail$',news_detail,name='news_detail'),
     url(r'^comment$',comment,name='comment'),
     url(r'^add_collection$',add_collection,name='add_collection'),
     url('ckeditor',include('ckeditor_uploader.urls')),

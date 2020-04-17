@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 
 from apps.comment.form import CommentText
 from .models import Comment
@@ -86,14 +87,16 @@ def comment(request):
 
 
 def community(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     user = request.user
     user_content_type = ContentType.objects.get_for_model(user)
-    comments = Comment.objects.filter(content_type=user_content_type, object_id=user.id)[:10]
+    comments = Comment.objects.filter(content_type=user_content_type)[:10]
     form = CommentText()
-
     return render(request, "community.html", locals())
 
 def community_api(request):
+
     comment_user = request.user
     comment_text = request.POST.get('comment_text', '')
     if comment_text.strip() == "":
@@ -102,9 +105,6 @@ def community_api(request):
 
     content_type = request.POST.get('content_type', '')
     object_id = request.POST.get('object_id', '')
-    print(content_type)
-    print(object_id)
-    print(comment_text)
     model_class = ContentType.objects.get(model=content_type)
 
     comment = Comment()

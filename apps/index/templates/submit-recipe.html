@@ -1,6 +1,31 @@
 {% extends "base.html" %}
 {% block body %}
-<body class="overflow-reset">
+
+
+<!-- Titlebar
+================================================== -->
+<section id="titlebar">
+	<!-- Container -->
+	<div class="container">
+
+		<div class="eight columns">
+			<h2>Submit Recipe</h2>
+		</div>
+
+		<div class="eight columns">
+			<nav id="breadcrumbs">
+				<ul>
+					<li>You are here:</li>
+					<li><a href="#">Home</a></li>
+					<li>Submit Recipe</li>
+				</ul>
+			</nav>
+		</div>
+
+	</div>
+	<!-- Container / End -->
+</section>
+
 
 
 <!-- Content
@@ -11,7 +36,7 @@
 
 
 			<!-- Recipe Title -->
-			<h4>菜谱名</h4>
+			<h4>Recipe Title</h4>
 			<nav class="title">
 				<input class="search-field" type="text" placeholder="" value=""/>
 			</nav>
@@ -23,7 +48,7 @@
 
 			<!-- Choose Category -->
 			<div class="select">
-				<h4>选择种类</h4>
+				<h4>Choose Category</h4>
 				<select data-placeholder="Choose Category" class="chosen-select-no-single">
 					<option value="1">All</option>
 					<option value="2">Breakfast</option>
@@ -76,7 +101,7 @@
 
 			<!-- Ingredients -->
 			<fieldset class="addrecipe-cont" name="ingredients">
-				<h4>做法:</h4>
+				<h4>Ingredients:</h4>
 
 				<table id="ingredients-sort">
 
@@ -197,17 +222,15 @@
 			</fieldset>
 
 			<div class="margin-top-30"></div>
-			<a href="" class="button color big">提交</a>
+			<a href="" class="button color big">Submit Recipe</a>
 
 		</div>
 	</div>
 </div>
 <!-- Container / End -->
+{% endblock %}
 
 
-<div class="margin-top-50"></div>
-
-</body>
 <!-- Wrapper / End -->
 
-{% endblock %}
+
