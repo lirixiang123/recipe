@@ -45,6 +45,9 @@
 	<div class="three columns">
 		<div id="logo">
 			<h1><a href="{% url "index" %}"><img src="/static/images/logo.png" alt="Chow" /></a></h1>
+             <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=1" width="330" height="35"
+                frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
 		</div>
 	</div>
 
@@ -59,7 +62,7 @@
 			<li><a href="{% url 'index' %}" id="{% if request.path == "/" %}current{% endif %}" >主页</a></li>
 
             <li><a href="{%  url  'video' %}" id="{% if request.path == "/video" %}current{% endif %}">美食视频</a></li>
-        
+
             <li><a href="{%  url  'community' %}" id="{% if request.path == "/community" %}current{% endif %}">美食社区</a></li>
 
             <li><a href="{% url "news" %}" id="{% if request.path == "/news" %}current{% endif %}">美食资讯</a></li>
