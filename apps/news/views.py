@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 from django.shortcuts import render
 import requests
 # Create your views here.
+from django.views.decorators.cache import cache_page
+@cache_page(60 * 15)
 def news(request):
     news = news_spider()
     soup = get_soup()

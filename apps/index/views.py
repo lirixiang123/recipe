@@ -40,6 +40,8 @@ def get_image():
     image_list = re.findall(r'<img src="(http://pic1.win4000.com/wallpaper/.*?.jpg)"',res)
     return image_list
 
+from django.views.decorators.cache import cache_page
+@cache_page(60 * 15)
 def index(request):
     ranking = Item.objects.order_by('-likes')[:27]
     recommend = random.sample(list(Item.objects.all()),5)
