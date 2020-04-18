@@ -5,7 +5,7 @@ import json
 from django.core import serializers
 # Create your views here.
 def shop(request):
-    shop_items = Shop.objects.all()[:10]
+    shop_items = Shop.objects.all()[:9]
     shop_data = serializers.serialize('json', shop_items)
     shop_data = json.loads(shop_data)
     #print(shop_data)

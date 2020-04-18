@@ -1,8 +1,6 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block body %}
-
-<!-- Titlebar
-================================================== -->
 <section id="titlebar">
 	<!-- Container -->
 	<div class="container">
@@ -15,7 +13,7 @@
 			<nav id="breadcrumbs">
 				<ul>
 					<li>你在:</li>
-					<li><a href="{% url "index" %}">主页</a></li>
+					<li><a href="#">主页</a></li>
 					<li>商店</li>
 				</ul>
 			</nav>
@@ -24,11 +22,6 @@
 	</div>
 	<!-- Container / End -->
 </section>
-
-
-
-<!-- Content
-================================================== -->
 <div class="container">
 
 	<!-- Products -->
@@ -37,142 +30,39 @@
 		<!-- Ordering -->
 		<div class="ordering">
 			<select class="chosen-select-no-single">
-				<option value="menu_order" >Default Sorting</option>
-				<option value="popularity" >Sort by Popularity</option>
-				<option value="rating" >Sort by Average Rating</option>
-				<option value="date">Sort by Newness</option>
-				<option value="price" >Sort by Price: Low to High</option>
-				<option value="price-desc" >Sort by Price: High to Low</option>
+				<option value="menu_order" >默认排序</option>
+				<option value="popularity" >按人气排序</option>
+				<option value="rating" >按平均评级排序</option>
+				<option value="date">按新旧程度排序</option>
+				<option value="price" >按价格排序：从低到高</option>
+				<option value="price-desc" >按价格排序：从高到低</option>
 			</select>
 		</div>
 		<div class="clearfix"></div>
 
-
+        {% for i in shop_items %}
 		<!-- Product #1 -->
 		<div class="four shop columns">
 			<figure class="product">
 
 				<div class="mediaholder">
 					<a href="product-page.html">
-						<img alt="" src="/static/images/shop_item_01.jpg"/>
+						<img alt="" src="{{ i.image }}"/>
 					</a>
 					<a href="#" class="product-button"><i class="fa fa-shopping-cart"></i></a>
 				</div>
 
 				<a href="product-page.html">
 					<section>
-						<span class="product-category">Spices</span>
-						<h5>Cardamom Pods</h5>
-						<span class="product-price">$2.99</span>
+						<div class="product-category">{{i.shop}}</div>
+						<h5>{{i.title}}</h5>
+						<div class="product-price">{{i.price}}</div>
 					</section>
 				</a>
 			</figure>
 		</div>
+{% endfor %}
 
-		<!-- Product #2 -->
-		<div class="four shop columns">
-			<figure class="product">
-
-				<div class="mediaholder">
-					<a href="product-page.html">
-						<img alt="" src="/static/images/shop_item_02.jpg"/>
-					</a>
-					<a href="#" class="product-button"><i class="fa fa-shopping-cart"></i></a>
-				</div>
-
-				<a href="product-page.html">
-					<section>
-						<span class="product-category">Spices</span>
-						<h5>Mixed Herbs</h5>
-						<span class="product-price">$2.99</span>
-					</section>
-				</a>
-			</figure>
-		</div>
-
-		<!-- Product #3 -->
-		<div class="four shop columns">
-			<figure class="product">
-
-				<div class="mediaholder">
-					<a href="product-page.html">
-						<img alt="" src="/static/images/shop_item_03.jpg"/>
-					</a>
-					<a href="#" class="product-button"><i class="fa fa-shopping-cart"></i></a>
-				</div>
-
-				<a href="product-page.html">
-					<section>
-						<span class="product-category">Spices</span>
-						<h5>Chilli Powder</h5>
-						<span class="product-price">$2.99</span>
-					</section>
-				</a>
-			</figure>
-		</div>
-
-		<!-- Product #4 -->
-		<div class="four shop columns">
-			<figure class="product">
-
-				<div class="mediaholder">
-					<a href="product-page.html">
-						<img alt="" src="/static/images/shop_item_04.jpg"/>
-					</a>
-					<a href="#" class="product-button"><i class="fa fa-shopping-cart"></i></a>
-				</div>
-
-				<a href="product-page.html">
-					<section>
-						<span class="product-category">Spices</span>
-						<h5>Black Peppercorns</h5>
-						<span class="product-price">$2.99</span>
-					</section>
-				</a>
-			</figure>
-		</div>
-
-		<!-- Product #5 -->
-		<div class="four shop columns">
-			<figure class="product">
-
-				<div class="mediaholder">
-					<a href="product-page.html">
-						<img alt="" src="/static/images/shop_item_05.jpg"/>
-					</a>
-					<a href="#" class="product-button"><i class="fa fa-shopping-cart"></i></a>
-				</div>
-
-				<a href="product-page.html">
-					<section>
-						<span class="product-category">Spices</span>
-						<h5>Cumin Seeds</h5>
-						<span class="product-price">$2.99</span>
-					</section>
-				</a>
-			</figure>
-		</div>
-
-		<!-- Product #6 -->
-		<div class="four shop columns">
-			<figure class="product">
-
-				<div class="mediaholder">
-					<a href="product-page.html">
-						<img alt="" src="/static/images/shop_item_06.jpg"/>
-					</a>
-					<a href="#" class="product-button"><i class="fa fa-shopping-cart"></i></a>
-				</div>
-
-				<a href="product-page.html">
-					<section>
-						<span class="product-category">Spices</span>
-						<h5>Garlic Granules</h5>
-						<span class="product-price">$2.99</span>
-					</section>
-				</a>
-			</figure>
-		</div>
 
 		<div class="clearfix"></div>
 		<div class="margin-top-40"></div>
@@ -216,7 +106,7 @@
 
 		<!-- Cart -->
 		<div class="widget">
-			<h4 class="headline">Cart</h4>
+			<h4 class="headline">购物车</h4>
 			<span class="line margin-bottom-30"></span>
 			<div class="clearfix"></div>
 
@@ -224,37 +114,36 @@
 				<ul class="product_list_widget">
 
 					<li>
-						<a href="#" class="image"><img src="/static/images/shop_item_02a.jpg" alt=""></a>
+						<a href="#" class="image"><img src="{{ shop_items.0.image }}" alt=""></a>
 						<div class="product_title">
-							<a href="#">Mixed Herbs</a>
-							<span class="quantity">1 × <span class="amount">$2.99</span></span>
+							<a href="#">{{shop_items.0.title}}</a>
+							<div class="quantity">1 × <div class="amount">{{shop_items.0.price}}</div></div>
 						</div>
 					</li>
 
 				</ul>
 
-				<p class="total"><strong>Subtotal:</strong>
-				<span class="amount">$2.99</span></p>
+                <div class="total"><strong>总计:</strong><p class="amount">$2.99 </p>
 
-				<span class="buttons">
-					<a href="#" class="button">View Cart</a>
-					<a href="#" class="button color">Checkout</a>
-				</span>
+				<div class="buttons">
+					<a href="#" class="button">购物车</a>
+					<a href="#" class="button color">支付</a>
+				</div>
 			</div>
 		</div>
 
 
 	 	<!-- Widget -->
 	 	<div class="widget">
-			<h4 class="headline">Filter by Price</h4>
+			<h4 class="headline">通过价格过滤</h4>
 			<span class="line margin-bottom-30"></span>
 			<div class="clearfix"></div>
 
 			<div id="price-range">
 				<div class="padding-range"><div id="slider-range"></div></div>
-				<label for="amount">Price:</label>
+				<label for="amount">价格:</label>
 				<input type="text" id="amount"/>
-				<a href="#" class="button color">Filter</a>
+				<a href="#" class="button color">过滤</a>
 			</div>
 			<div class="clearfix"></div>
 	 	</div>
@@ -264,10 +153,7 @@
 </div>
 <!-- Container / End -->
 
-
+</div>
 <div class="margin-top-5"></div>
 
 {% endblock %}
-<!-- Wrapper / End -->
-
-

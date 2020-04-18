@@ -8,7 +8,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, InvalidPage, Empt
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
 
-from libs.spider import get_soup, spider, get_res
+from libs.spider_test import get_soup, spider, get_res
 from .models import *
 from apps.comment.models import Comment
 from apps.comment.form import CommentText
