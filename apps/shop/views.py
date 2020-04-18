@@ -4,6 +4,8 @@ from .models import Shop
 import json
 from django.core import serializers
 # Create your views here.
+from django.views.decorators.cache import cache_page
+@cache_page(60 * 15)
 def shop(request):
     shop_items = Shop.objects.all()[:9]
     shop_data = serializers.serialize('json', shop_items)
