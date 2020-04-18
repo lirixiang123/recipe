@@ -229,7 +229,7 @@
             CKEDITOR.instances["id_comment_text"].updateElement();
             //异步提交
             $.ajax({
-                url: "{% url 'comment' %}",
+                url: "{% url 'apis:comment' %}",
                 type:'POST',
                 data:$(this).serialize(),
                 cache:false,

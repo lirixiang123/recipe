@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'apps.shop',
     'ckeditor',
     'ckeditor_uploader',
+    'rest_framework',
 
 ]
 

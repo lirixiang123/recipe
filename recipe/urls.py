@@ -21,7 +21,7 @@ from apps.user.views import user_login,user_logout,submit,Register,test
 from apps.index.views import index,search,detail,add_collection
 from apps.video.views import video
 from apps.news.views import news
-from apps.comment.views import comment,community
+from apps.comment.views import community
 from apps.shop.views import shop
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,20 +31,22 @@ urlpatterns = [
     url(r'^submit$',submit,name='submit'),
 
     url(r'^$',index,name='index'),
-    url(r'^search$',search,name='search'),
-    url(r'^detail$',detail,name='detail'),
+    url(r'^search/',search,name='search'),
+    url(r'^detail/',detail,name='detail'),
 
-    url(r'^video$',video,name='video'),
+    url(r'^video/',video,name='video'),
 
-    url(r'^news$',news,name='news'),
+    url(r'^news/',news,name='news'),
 
-    url(r'^comment$',comment,name='comment'),
 
-    url(r'^shop$',shop,name='shop'),
+
+    url(r'^shop/',shop,name='shop'),
 
     url(r'^add_collection$',add_collection,name='add_collection'),
     url('ckeditor',include('ckeditor_uploader.urls')),
     url(r'^test$',test,name='test'),
-    url(r'^community',community,name='community')
+    url(r'^community/',community,name='community'),
+
+    url(r'api/v1/',include('apps.apis.urls',namespace="apis")),
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
