@@ -1,14 +1,12 @@
 import random
 import re
 import threading
-
-from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, PageNotAnInteger, InvalidPage, EmptyPage
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 
-from libs.spider_test import get_soup, spider, get_res
+from utils.spider_test import get_soup, spider, get_res
 from .models import *
 from apps.comment.models import Comment
 from apps.comment.form import CommentText
@@ -20,7 +18,7 @@ def get_extra(i):
     try:
         p = soup.select('div.materials p')[0].get_text()
     except Exception:
-        p = "没有简介"
+        p = i.title
 
     try:
         bar =  re.findall(r"""class="big">(.*?)</a>""",res)
@@ -34,7 +32,7 @@ def get_extra(i):
     i.flavor =flavor
     i.technology = technology
 
-def get_image():
+def get_meizi_image():
     url = "http://www.win4000.com/wallpaper_2285_0_0_1.html"
     res = get_res(url)
     image_list = re.findall(r'<img src="(http://pic1.win4000.com/wallpaper/.*?.jpg)"',res)
@@ -51,7 +49,7 @@ def index(request):
         t.start()
         t.join()
     rand = random.sample(list(Item.objects.all()),8)
-    image_urls = get_image()[::-1]
+    image_urls = get_meizi_image()[::-1]
     #print(image_urls)
     return render(request, 'index.html', locals())
 
@@ -86,7 +84,7 @@ def search(request):
     return render(request, 'browse-recipes.html', locals())
 
 def detail(request):
-    id = request.GET.get("id")
+    id = request.GET.get("id","")
     item = Item.objects.get(id = id)
     #print(item.url)
     soup = get_soup(item.url)

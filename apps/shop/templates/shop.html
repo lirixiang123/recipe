@@ -46,13 +46,13 @@
 			<figure class="product">
 
 				<div class="mediaholder">
-					<a href="product-page.html">
+					<a href="{% url "shop:detail" %}?id={{ i.id }}">
 						<img alt="" src="{{ i.image }}"/>
 					</a>
-					<a href="#" class="product-button"><i class="fa fa-shopping-cart"></i></a>
+					<a href="{% url "shop:detail" %}?id={{ i.id }}" class="product-button"><i class="fa fa-shopping-cart"></i></a>
 				</div>
 
-				<a href="product-page.html">
+				<a href="{% url "shop:detail" %}?id={{ i.id }}">
 					<section>
 						<div class="product-category">{{i.shop}}</div>
 						<h5>{{i.title}}</h5>
@@ -155,5 +155,11 @@
 
 </div>
 <div class="margin-top-5"></div>
-
+{# 获取用户购物车中商品的数目 #}
+    <script>
+    $.get('/shop/cart/count/', function (data) {
+                // {'res':商品的总数}
+                $('.product-price').html(data.res)
+    })
+    </script>
 {% endblock %}

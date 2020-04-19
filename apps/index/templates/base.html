@@ -66,7 +66,7 @@
 
             <li><a href="{%  url  'community' %}" id="{% if request.path == "/community" %}current{% endif %}">美食社区</a></li>
 
-            <li><a href="{%  url  'shop' %}" id="{% if request.path == "/shop" %}current{% endif %}">美食商店</a></li>
+            <li><a href="{%  url  'shop:index' %}" id="{% if request.path == "/shop" %}current{% endif %}">美食商店</a></li>
 
             <li><a href="{% url "news" %}" id="{% if request.path == "/news" %}current{% endif %}">美食资讯</a></li>
 
@@ -80,10 +80,10 @@
 
                     <li><a href="{%  url "submit"  %}">个人中心</a></li>
                     {% if user.is_authenticated %}
-                        <li><a href="{%  url "logout"  %}">登出</a></li>
+                        <li><a href="{%  url "user:logout"  %}">登出</a></li>
                     {% else %}
-                        <li><a href="{%  url "login"  %}">登录</a></li>
-                        <li><a href="{%  url "register"  %}">注册</a></li>
+                        <li><a href="{%  url "user:login"  %}">登录</a></li>
+                        <li><a href="{%  url "user:register"  %}">注册</a></li>
                     {% endif %}
 
 

@@ -23,9 +23,7 @@ def user_login(request):
     else:
         return render(request,'login.html')
 
-def user_logout(request):
-    logout(request)
-    return redirect('index')
+
 
 class Register(View):
     def get(self, request):
@@ -48,6 +46,10 @@ class Register(View):
             if form.error_messages:
                 errors=form.error_messages
             return render(request,'register.html',locals())
+
+def user_logout(request):
+    logout(request)
+    return redirect(reverse('index'))
 
 def submit(request):
     return render(request,"submit-recipe.html")

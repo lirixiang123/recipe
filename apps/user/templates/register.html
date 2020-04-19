@@ -29,7 +29,7 @@ $(document).ready(function() {
           </div>
           <p>Strive&nbsp;&nbsp;&nbsp;&nbsp;Everyday</p>
      </div>
-   <form name="register" action="{% url 'register' %}" method="post">
+   <form name="register" action="{% url 'user:register' %}" method="post">
             {% csrf_token %}
      <p class="p user_icon">
        <input type="text" placeholder="账号" autocomplete="off" class="login_txtbx" name="username" id="username"><p  style="color:#FFFFFF" id="userinfo" >{{ form.error_messages }}</p>

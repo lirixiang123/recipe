@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from apps.comment.form import CommentText
+from utils.decorators import login_required
 from .models import Comment
 from django.contrib.contenttypes.models import ContentType
 
@@ -37,10 +38,8 @@ from django.contrib.contenttypes.models import ContentType
 
 
 
-
+@login_required
 def community(request):
-    if not request.user.is_authenticated:
-        return redirect('login')
     user = request.user
     user_content_type = ContentType.objects.get_for_model(user)
     comments = Comment.objects.filter(content_type=user_content_type)[:10]

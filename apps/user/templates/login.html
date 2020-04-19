@@ -29,7 +29,7 @@ $(document).ready(function() {
           </div>
           <p>Strive&nbsp;&nbsp;&nbsp;&nbsp;Everyday</p>
      </div>
-   <form name="login" action="{% url 'login' %}" method="post">
+   <form name="login" action="{% url 'user:login' %}" method="post">
             {% csrf_token %}
      <p class="p user_icon">
       <input type="text" placeholder="账号" autocomplete="off" class="login_txtbx" name="username" id="username"><p  style="color:#FFFFFF" id="userinfo"></p>
@@ -44,7 +44,7 @@ $(document).ready(function() {
         </div>
         <a class="ver_btn" onclick="createCode();" onselectstart="return false">看不清，换一张</a>
       </div>
-       <a href="{% url "register" %}"  style="color:#FFFFFF"><p>没有账号?点击注册</p></a>
+       <a href="{% url "user:register" %}"  style="color:#FFFFFF"><p>没有账号?点击注册</p></a>
       <div class="signup">
         <a class="gv" onclick="validate();javascript:document.login.submit();"  >登&nbsp;&nbsp;录</a>
           <a class="gv" onclick="javascript:document.login.reset();" >清&nbsp;&nbsp;空</a>
