@@ -28,7 +28,7 @@ def video(request):
         "video_list":video_list,
         "video_id":id,
     }
-    print(video_list)
+    # print(video_list)
     return render(request, "video.html", context)
 
 
