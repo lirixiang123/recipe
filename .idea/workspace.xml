@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="fbd66f65-4a9e-4373-9928-484d81ccfa9a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shop/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/shop/templates/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shop/templates/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/index/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/index/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/index/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shop/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/video/templates/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/video/templates/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/video/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/video/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/video/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/video/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop.sql" beforeDir="false" afterPath="$PROJECT_DIR$/shop.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/spider/spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/spider/spider.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +53,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/video/templates" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -58,19 +64,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\86132\Desktop\recipe\apps\video\templates" />
+      <recent name="C:\Users\86132\Desktop\recipe\apps\shop\cart" />
+      <recent name="C:\Users\86132\Desktop\recipe\apps\shop" />
+      <recent name="C:\Users\86132\Desktop\recipe\apps\index\static\css" />
+      <recent name="C:\Users\86132\Desktop\recipe\apps\index\static\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\86132\Desktop\recipe\utils" />
       <recent name="C:\Users\86132\Desktop\recipe\libs\spider" />
       <recent name="C:\Users\86132\Desktop\recipe\apps" />
       <recent name="C:\Users\86132\Desktop\recipe\apps\news\templates" />
       <recent name="C:\Users\86132\Desktop\recipe\libs" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\86132\Desktop\recipe\apps\shop\cart" />
-      <recent name="C:\Users\86132\Desktop\recipe\apps\shop" />
-      <recent name="C:\Users\86132\Desktop\recipe\apps\index\static\css" />
-      <recent name="C:\Users\86132\Desktop\recipe\apps\index\static\images" />
-      <recent name="C:\Users\86132\Desktop\recipe\apps\index\static\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -106,7 +112,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="crawler" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="recipe" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -114,12 +120,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/E-commerce-crawlers-master/E-commerce-crawlers-master/jd_phone" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils/spider" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/E-commerce-crawlers-master/E-commerce-crawlers-master/jd_phone/crawler.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/spider/spider.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,7 +156,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="taobaoproduct" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="recipe" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -158,12 +164,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/webcrawler-master" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apps/video" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\86132\Desktop\recipe\libs\spider\taobaoproduct.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/apps/video/tests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -172,7 +178,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tm-mobie" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="views (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="recipe" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -180,12 +186,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads/E-commerce-crawlers-master/E-commerce-crawlers-master/tm-products-m" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apps/video" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/E-commerce-crawlers-master/E-commerce-crawlers-master/tm-products-m/tm-mobie.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/apps/video/views.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -251,19 +257,19 @@
     </configuration>
     <list>
       <item itemvalue="Django server.recipe" />
-      <item itemvalue="Python.tm-mobie" />
-      <item itemvalue="Python.crawler" />
-      <item itemvalue="Python.taobaoproduct" />
       <item itemvalue="Python.taobaoproduct (1)" />
       <item itemvalue="Python.views" />
+      <item itemvalue="Python.spider" />
+      <item itemvalue="Python.tests" />
+      <item itemvalue="Python.views (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tests" />
+        <item itemvalue="Python.views (1)" />
+        <item itemvalue="Python.spider" />
         <item itemvalue="Python.views" />
         <item itemvalue="Python.taobaoproduct (1)" />
-        <item itemvalue="Python.taobaoproduct" />
-        <item itemvalue="Python.crawler" />
-        <item itemvalue="Python.tm-mobie" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +304,8 @@
       <workItem from="1587201472855" duration="1511000" />
       <workItem from="1587203386602" duration="11528000" />
       <workItem from="1587265865595" duration="27202000" />
-      <workItem from="1587434554374" duration="1957000" />
+      <workItem from="1587434554374" duration="4497000" />
+      <workItem from="1587460156881" duration="13036000" />
     </task>
     <servers />
   </component>
@@ -341,9 +348,11 @@
     <SUITE FILE_PATH="coverage/recipe$views.coverage" NAME="views Coverage Results" MODIFIED="1587201534231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/shop" />
     <SUITE FILE_PATH="coverage/recipe$crawler.coverage" NAME="crawler Coverage Results" MODIFIED="1587178982676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/E-commerce-crawlers-master/E-commerce-crawlers-master/jd_phone" />
     <SUITE FILE_PATH="coverage/recipe$taobaoproduct__1_.coverage" NAME="taobaoproduct (1) Coverage Results" MODIFIED="1587183076780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/spider" />
+    <SUITE FILE_PATH="coverage/recipe$spider.coverage" NAME="spider Coverage Results" MODIFIED="1587466202389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils/spider" />
     <SUITE FILE_PATH="coverage/recipe$tm_mobie.coverage" NAME="tm-mobie Coverage Results" MODIFIED="1587178439836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/E-commerce-crawlers-master/E-commerce-crawlers-master/tm-products-m" />
     <SUITE FILE_PATH="coverage/recipe$taobaoproduct.coverage" NAME="taobaoproduct Coverage Results" MODIFIED="1587182770589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/webcrawler-master" />
-    <SUITE FILE_PATH="coverage/recipe$tests.coverage" NAME="tests Coverage Results" MODIFIED="1583230285018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/index" />
+    <SUITE FILE_PATH="coverage/recipe$tests.coverage" NAME="tests Coverage Results" MODIFIED="1587469088868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/video" />
+    <SUITE FILE_PATH="coverage/recipe$views__1_.coverage" NAME="views (1) Coverage Results" MODIFIED="1587466286092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps/video" />
     <SUITE FILE_PATH="coverage/recipe$spider__1_.coverage" NAME="spider (1) Coverage Results" MODIFIED="1587139735334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/spider" />
   </component>
 </project>

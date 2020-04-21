@@ -34,7 +34,7 @@ def detail(request):
         return redirect(reverse("shop:index"))
 
     #新品推荐
-    shop_recommend = random.sample(list(Shop.objects.all()), 5)
+    shop_recommend = random.sample(list(Shop.objects.all()), 4)
     context = {
         "shop_item":shop_item,
         "shop_recommend":shop_recommend,
