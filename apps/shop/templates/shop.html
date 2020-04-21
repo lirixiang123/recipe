@@ -157,9 +157,9 @@
 <div class="margin-top-5"></div>
 {# 获取用户购物车中商品的数目 #}
     <script>
-    $.get('/shop/cart/count/', function (data) {
-                // {'res':商品的总数}
-                $('.product-price').html(data.res)
-    })
+    {#$.get('/shop/cart/count/', function (data) {#}
+    {#            // {'res':商品的总数}#}
+    {#            $('.product-price').html(data.res)#}
+    {#)#}
     </script>
 {% endblock %}

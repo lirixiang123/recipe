@@ -16,18 +16,16 @@ def shop(request):
     shop_hot = Shop.objects.get_shop_by_type(limit=9,sort='hot')
     shop_price_asc = Shop.objects.get_shop_by_type(limit=9,sort='asc_price')
     shop_price_desc = Shop.objects.get_shop_by_type(limit=9,sort='desc_price')
-
     shop_items = Shop.objects.all()[:9]
-    shop_data = serializers.serialize('json', shop_items)
-    shop_data = json.loads(shop_data)
-    #print(shop_data)
+
     context = {
         'shop_new':shop_new,
         'shop_hot':shop_hot,
         'shop_price_asc':shop_price_asc,
         'shop_price_desc':shop_price_desc,
+        'shop_items':shop_items,
     }
-    return render(request,"shop.html",locals())
+    return render(request,"shop.html",context)
 
 def detail(request):
     id = request.GET.get("id","")

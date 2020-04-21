@@ -2,36 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd66f65-4a9e-4373-9928-484d81ccfa9a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/shop/cart/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/shop/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/user/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/base_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/decorators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/get_hash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/comment/templates/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/comment/templates/community.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/comment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/comment/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/index/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/index/templates/recipe-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/templates/recipe-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/index/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/index/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/shop/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shop/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shop/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/shop/templates/product-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shop/templates/product-page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/shop/templates/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shop/templates/shop.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/images.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/spider/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/spider/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/spider/page_parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/spider/page_parsing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/spider/spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/spider/spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/spider/taobaoproduct.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/spider/taobaoproduct.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/spider_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/spider_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +47,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/shop/cart" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -323,7 +297,8 @@
       <workItem from="1587177594060" duration="15325000" />
       <workItem from="1587201472855" duration="1511000" />
       <workItem from="1587203386602" duration="11528000" />
-      <workItem from="1587265865595" duration="20452000" />
+      <workItem from="1587265865595" duration="27202000" />
+      <workItem from="1587434554374" duration="1957000" />
     </task>
     <servers />
   </component>

@@ -45,7 +45,7 @@ class ShopManager(models.Manager):
 
 class Shop(BaseModel):
     image = models.CharField(max_length=200,verbose_name="图片")
-    price = models.IntegerField(verbose_name="商品价格")
+    price = models.CharField(max_length=20,verbose_name="商品价格")
     deal = models.CharField(max_length=20,verbose_name="商品销量")
     title = models.CharField(max_length=100,verbose_name="商品名称")
     shop = models.CharField(max_length=50,verbose_name="商店名称")
